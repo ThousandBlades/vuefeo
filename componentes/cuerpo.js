@@ -18,7 +18,47 @@ Vue.component('cuerpo',{
                 </div>
             </div>
         </div>
-        <div class="col-md-9">relleno temporal</div>
+        <div class="col-md-9 row">
+            <div class="card col-md m-2">
+                <img class="card-img-top property border" v-bind:src="venta.imagen" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Venta</h5>             
+                    <p class="card-text">Ubicación: {{venta.lugar}}</p>
+                    <p class="card-text">Metros Construidos: {{venta.tamano}} hectáreas </p>
+                    <p class="card-text">Precio: {{venta.precio}} usd</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+            <div class="card col-md m-2">
+                <img class="card-img-top property border" v-bind:src="arriendo.imagen" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Arriendo</h5>             
+                    <p class="card-text">Ubicación: {{arriendo.lugar}}</p>
+                    <p class="card-text">Metros Construidos: {{arriendo.tamano}} litros </p>
+                    <p class="card-text">Precio: {{arriendo.precio}} riñón/mes</p>
+                    <a href="#" class="btn btn-primary">Arrendar</a>
+                </div>
+            </div>    
+        </div>
     </div>
-    `
+    `,
+
+    data(){
+        return{
+            venta: {
+                imagen: ventaRandom.img,
+                tipo: ventaRandom.type,
+                lugar: ventaRandom.place,
+                tamano: ventaRandom.size,
+                precio: ventaRandom.price,
+            },
+            arriendo:{
+                imagen: arriendoRandom.img,
+                tipo: arriendoRandom.type,
+                lugar: arriendoRandom.place,
+                tamano: arriendoRandom.size,
+                precio: arriendoRandom.price,
+            }
+        }
+    }
 } )
